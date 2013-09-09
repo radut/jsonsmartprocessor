@@ -1,0 +1,16 @@
+serialization : 
+building cache
+	doBuildCache() took : 39259309 ns
+got from cache
+	doUseCache() took : 0 ns
+	
+	
+deserialization :
+	doBuildCacheDeserialization() took : 39723955 ns
+
+		PojoObject [myStringField=alabala, getMyPojo()=passsd]
+
+
+	doUseCacheDeserialization() took : 181007 ns
+
+ 		PojoObject [myStringField=alabala, getMyPojo()=passsd]
