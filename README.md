@@ -7,6 +7,7 @@ Usage:
 
 annotation on a field (note: you can specify name,to overide the default name which is field name)
 You can use a field only in serialization / deserialization / default = Both
+
 		public class PlainObject { 
 		    @JsonSmart
 		    private OtherObject[] arrOtherObjectField;
@@ -19,6 +20,7 @@ You can use a field only in serialization / deserialization / default = Both
 		}
 
 annotation on method
+
 		public class PlainObjectMethods {
 		    private OtherObjectMethods[] arrOtherObjectField;
 		    private String[] arrStringField;
