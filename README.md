@@ -7,44 +7,44 @@ Usage:
 
 annotation on a field (note: you can specify name,to overide the default name which is field name)
 You can use a field only in serialization / deserialization / default = Both
-	public class PlainObject { 
-	    @JsonSmart
-	    private OtherObject[] arrOtherObjectField;
-	    @JsonSmart(type=JsonSmartSerializationType.BOTH)
-	    private String[] arrStringField;
-	    @JsonSmart(type=JsonSmartSerializationType.SERIALIZATION)
-	    private int serializationIntField;
-	    @JsonSmart(type=JsonSmartSerializationType.DESERIALIZATION)
-	    private int newIntField;
-	}
+		public class PlainObject { 
+		    @JsonSmart
+		    private OtherObject[] arrOtherObjectField;
+		    @JsonSmart(type=JsonSmartSerializationType.BOTH)
+		    private String[] arrStringField;
+		    @JsonSmart(type=JsonSmartSerializationType.SERIALIZATION)
+		    private int serializationIntField;
+		    @JsonSmart(type=JsonSmartSerializationType.DESERIALIZATION)
+		    private int newIntField;
+		}
 
 annotation on method
-	public class PlainObjectMethods {
-	    private OtherObjectMethods[] arrOtherObjectField;
-	    private String[] arrStringField;
-	     @JsonSmart( type = JsonSmartSerializationType.SERIALIZATION, name = "arrOtherObjectField" )
-	    public OtherObjectMethods[] getArrOtherObjectField() {
-	    
-	        return arrOtherObjectField;
-	    }
-	    
-	    @JsonSmart( type = JsonSmartSerializationType.SERIALIZATION, name = "arrStringField" )
-	    public String[] getArrStringField() {
-	    
-	        return arrStringField;
-	    }
-	      @JsonSmart( type = JsonSmartSerializationType.DESERIALIZATION, name = "otherObjectField" )
-	    public void setOtherObjectMethodsField( OtherObjectMethods otherObjectField ) {
-	    
-	        this.otherObjectField = otherObjectField;
-	    }
-	    
-	    @JsonSmart( type = JsonSmartSerializationType.DESERIALIZATION, name = "shortField" )
-	    public void setShortField( short shortField ) {
-	    
-	        this.shortField = shortField;
-	    }
-	}
+		public class PlainObjectMethods {
+		    private OtherObjectMethods[] arrOtherObjectField;
+		    private String[] arrStringField;
+		     @JsonSmart( type = JsonSmartSerializationType.SERIALIZATION, name = "arrOtherObjectField" )
+		    public OtherObjectMethods[] getArrOtherObjectField() {
+		    
+		        return arrOtherObjectField;
+		    }
+		    
+		    @JsonSmart( type = JsonSmartSerializationType.SERIALIZATION, name = "arrStringField" )
+		    public String[] getArrStringField() {
+		    
+		        return arrStringField;
+		    }
+		      @JsonSmart( type = JsonSmartSerializationType.DESERIALIZATION, name = "otherObjectField" )
+		    public void setOtherObjectMethodsField( OtherObjectMethods otherObjectField ) {
+		    
+		        this.otherObjectField = otherObjectField;
+		    }
+		    
+		    @JsonSmart( type = JsonSmartSerializationType.DESERIALIZATION, name = "shortField" )
+		    public void setShortField( short shortField ) {
+		    
+		        this.shortField = shortField;
+		    }
+		}
 
 
 Api calls:
