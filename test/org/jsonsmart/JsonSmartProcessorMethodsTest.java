@@ -131,7 +131,7 @@ public class JsonSmartProcessorMethodsTest {
     public void testEncodingListString() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
     
         PlainObjectMethods po = new PlainObjectMethods( );
-        List<String> lst = new ArrayList<>( );
+        List<String> lst = new ArrayList<String>( );
         lst.add( "te1" );
         lst.add( "te2" );
         lst.add( "te3" );
@@ -144,7 +144,7 @@ public class JsonSmartProcessorMethodsTest {
     public void testEncodingMapStringToString() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
     
         PlainObjectMethods po = new PlainObjectMethods( );
-        Map<String, String> map = new TreeMap<>( );
+        Map<String, String> map = new TreeMap<String, String>( );
         map.put( "tk1", "tv1" );
         map.put( "tk2", "tv2" );
         map.put( "tk3", "tv3" );
@@ -159,7 +159,7 @@ public class JsonSmartProcessorMethodsTest {
     
         String jsonString = "{\"mapStringToStringField\":{\"tk1\":\"tv1\",\"tk2\":\"tv2\",\"tk3\":\"tv3\"}}";
         PlainObjectMethods po = (PlainObjectMethods) JsonSmartProcessor.deserialize( jsonString, PlainObjectMethods.class );
-        Map<String, String> map = new TreeMap<>( );
+        Map<String, String> map = new TreeMap<String, String>( );
         map.put( "tk1", "tv1" );
         map.put( "tk2", "tv2" );
         map.put( "tk3", "tv3" );
@@ -172,7 +172,7 @@ public class JsonSmartProcessorMethodsTest {
     
         String jsonSring = "{\"arrStringField\":[\"te1\",\"te2\",\"te3\"]}";
         PlainObjectMethods po = (PlainObjectMethods) JsonSmartProcessor.deserialize( jsonSring, PlainObjectMethods.class );
-        List<String> lst = new ArrayList<>( );
+        List<String> lst = new ArrayList<String>( );
         lst.add( "te1" );
         lst.add( "te2" );
         lst.add( "te3" );
@@ -184,7 +184,7 @@ public class JsonSmartProcessorMethodsTest {
     
         String jsonSring = "{\"listStringField\":[\"te1\",\"te2\",\"te3\"]}";
         PlainObjectMethods po = (PlainObjectMethods) JsonSmartProcessor.deserialize( jsonSring, PlainObjectMethods.class );
-        List<String> lst = new ArrayList<>( );
+        List<String> lst = new ArrayList<String>( );
         lst.add( "te1" );
         lst.add( "te2" );
         lst.add( "te3" );
@@ -195,7 +195,7 @@ public class JsonSmartProcessorMethodsTest {
     public void testEncodingArrString() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
     
         PlainObjectMethods po = new PlainObjectMethods( );
-        List<String> lst = new ArrayList<>( );
+        List<String> lst = new ArrayList<String>( );
         lst.add( "te1" );
         lst.add( "te2" );
         lst.add( "te3" );

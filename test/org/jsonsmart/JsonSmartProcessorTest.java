@@ -129,7 +129,7 @@ public class JsonSmartProcessorTest {
     public void testEncodingListString() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
     
         PlainObject po = new PlainObject( );
-        List<String> lst = new ArrayList<>( );
+        List<String> lst = new ArrayList<String>( );
         lst.add( "te1" );
         lst.add( "te2" );
         lst.add( "te3" );
@@ -142,7 +142,7 @@ public class JsonSmartProcessorTest {
     public void testEncodingMapStringToString() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
     
         PlainObject po = new PlainObject( );
-        Map<String, String> map = new TreeMap<>( );
+        Map<String, String> map = new TreeMap<String, String>( );
         map.put( "tk1", "tv1" );
         map.put( "tk2", "tv2" );
         map.put( "tk3", "tv3" );
@@ -157,7 +157,7 @@ public class JsonSmartProcessorTest {
     
         String jsonString = "{\"mapStringToStringField\":{\"tk1\":\"tv1\",\"tk2\":\"tv2\",\"tk3\":\"tv3\"}}";
         PlainObject po = (PlainObject) JsonSmartProcessor.deserialize( jsonString, PlainObject.class );
-        Map<String, String> map = new TreeMap<>( );
+        Map<String, String> map = new TreeMap<String, String>( );
         map.put( "tk1", "tv1" );
         map.put( "tk2", "tv2" );
         map.put( "tk3", "tv3" );
@@ -170,7 +170,7 @@ public class JsonSmartProcessorTest {
     
         String jsonSring = "{\"arrStringField\":[\"te1\",\"te2\",\"te3\"]}";
         PlainObject po = (PlainObject) JsonSmartProcessor.deserialize( jsonSring, PlainObject.class );
-        List<String> lst = new ArrayList<>( );
+        List<String> lst = new ArrayList<String>( );
         lst.add( "te1" );
         lst.add( "te2" );
         lst.add( "te3" );
@@ -182,7 +182,7 @@ public class JsonSmartProcessorTest {
     
         String jsonSring = "{\"listStringField\":[\"te1\",\"te2\",\"te3\"]}";
         PlainObject po = (PlainObject) JsonSmartProcessor.deserialize( jsonSring, PlainObject.class );
-        List<String> lst = new ArrayList<>( );
+        List<String> lst = new ArrayList<String>( );
         lst.add( "te1" );
         lst.add( "te2" );
         lst.add( "te3" );
@@ -193,7 +193,7 @@ public class JsonSmartProcessorTest {
     public void testEncodingArrString() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
     
         PlainObject po = new PlainObject( );
-        List<String> lst = new ArrayList<>( );
+        List<String> lst = new ArrayList<String>( );
         lst.add( "te1" );
         lst.add( "te2" );
         lst.add( "te3" );

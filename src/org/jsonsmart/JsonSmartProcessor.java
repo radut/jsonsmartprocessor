@@ -19,6 +19,8 @@ import net.minidev.json.JSONValue;
  * @author Radu Toader [radu.m.toader@gmail.com]
  */
 public class JsonSmartProcessor {
+    private static final String _LIST = "list";
+    private static final String _MAP = "map";
     private static Map<Class, ClassCacheInfo> cache = Collections.synchronizedMap( new HashMap<Class, ClassCacheInfo>( ) );
     
     public static Object deserialize( String jsonStr, Class<?> c ) throws IllegalArgumentException, IllegalAccessException, InstantiationException, InvocationTargetException {
@@ -131,7 +133,7 @@ public class JsonSmartProcessor {
         } else {
             if ( type.isArray( ) || type == List.class ) {
                 JSONArray arrObject = (JSONArray) jsValue;
-                List<Object> list = new ArrayList<>( );
+                List<Object> list = new ArrayList<Object>( );
                 for ( Object object : arrObject ) {
                     Class<?> classType = type.getComponentType( ) != null ? type.getComponentType( ) : value.getAnnotationInfo( ).classType( );
                     if ( classType == String.class ) {
@@ -215,6 +217,14 @@ public class JsonSmartProcessor {
             return null;
         JSONObject jsObject = new JSONObject( );
         //when we have in cache
+        
+        if ( obj instanceof List ) {
+            jsObject.put( _LIST, obj );
+            return jsObject;
+        } else if ( obj instanceof Map ) {
+            jsObject.put( _MAP, obj );
+            return jsObject;
+        }
         if ( !cache.containsKey( obj.getClass( ) ) || !useCache ) {
             buildClassCache( obj.getClass( ) );
         }
@@ -267,7 +277,7 @@ public class JsonSmartProcessor {
         } else {
             if ( type.isArray( ) || type == List.class ) {
                 JSONArray arrObject = (JSONArray) jsMap.get( key );
-                List<Object> list = new ArrayList<>( );
+                List<Object> list = new ArrayList<Object>( );
                 for ( Object object : arrObject ) {
                     
                     Class classType = type.getComponentType( ) != null ? type.getComponentType( ) : value.getAnnotationInfo( ).classType( );
